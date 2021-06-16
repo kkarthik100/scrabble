@@ -14,6 +14,12 @@ I considered tackling the game of Scrabble, partly because at that point in
 my life, I was playing it quite often and also because it was something I had
 never attempted before.
 
+# Try it out
+
+https://kkarthik100.github.io/scrabble/
+
+To play, drag each letter to the board until you have formed the word you are thinking of. Then hit the **Play** button.
+
 # The user interface
 
 If you try the game out, you will see that it is quite playable. I also think
