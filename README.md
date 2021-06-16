@@ -51,7 +51,7 @@ was written more than a decade ago? Well, if you want to build a world class
 scrabble engine, start small first. Studying the code here is a good first
 step. More interestingly, if you work in a company as an engineer and conduct
 technical interviews, you will find quite a few interesting problems that
-are encountered here, such as computing permutations with repitions, efficient
+are encountered here, such as computing permutations with repetitions, efficient
 dictionary lookups, efficient move generation and so on.
 
 # Contact
