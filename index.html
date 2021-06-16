@@ -1,0 +1,202 @@
+<html>
+<head>
+<style>
+
+body {
+  /*
+    Chrome / FF does not print background images by default. See:
+    https://developer.mozilla.org/en-US/docs/Web/CSS/-webkit-print-color-adjust
+  */
+  -webkit-print-color-adjust: exact;
+  -moz-user-select: none;
+//  background-color: #bbbbbb;
+}
+
+.arena {
+  position: relative;
+}
+
+.board {
+  position: absolute;
+}
+
+.status-bar {
+  height: 40px;
+  overflow: hidden;
+  position: absolute;
+  width: 300px;
+}
+
+.status-bar-human {
+  left: 620px;
+}
+
+.status-bar-ai {
+  left: 620px;
+  top: 500px;
+}
+
+.tiles-remaining {
+  color: #222222;
+  font: bold 20px arial,sans-serif;
+  height: 30px;
+  position: absolute;
+  top: 605px;
+}
+
+.tile {
+  position: absolute;
+  background-color: #cdc7a7;
+  border-width: 1px;
+  border-color: #dddddd;
+  border-style: solid;
+  width: 38px;
+  height: 38px;
+}
+
+.rack {
+  background-color: #00bbdd;
+  position: absolute;
+  width: 300px;
+  height: 60px;
+}
+
+.rack-ai {
+  left: 620px;
+  top: 540px;
+}
+
+.rack-human {
+  left: 620px;
+  top: 40px;
+}
+
+.buttons {
+  font-size: 20px;
+  height: 40px;
+  position: absolute;
+  width: 300px;
+}
+
+.play {
+  left: 620px;
+  top: 110px;
+}
+
+.recall {
+  left: 620px;
+  top: 150px;
+}
+
+.shuffle {
+  left: 620px;
+  top: 190px;
+}
+
+.dict {
+  left: 620px;
+  top: 240px;
+}
+
+.score {
+  color: #00bbbb;
+  font: bold 30px arial,sans-serif;
+  height: 38px;
+  left: 10px;
+  position: absolute;
+}
+
+.letter {
+  background-color: #000066;
+  border-color: #dddddd;
+  border-style: solid;
+  color: #eeeeee;
+  font-family: "arial";
+  font-size: 1.3em;
+  font-weight: bold;
+  text-align: center;
+}
+
+.letter-hover {
+  background-color: #0000dd;
+  cursor: move;
+}
+
+.letter-ai {
+  background-color: #bb2200;
+}
+
+.special-square {
+  font-family: sans-serif;
+  font-size: 16px;
+  margin-top: 8px;
+  text-align: center;
+}
+
+.center-square {
+  border-color: #445566;
+  border-style: solid;
+  border-width: 2px;
+  height: 36px;
+  width: 36px;
+}
+
+.tw {
+  background-color: #ff0000;
+  color: #000000;
+}
+
+.dw {
+  background-color: #ffc0e0;
+  color: #000000;
+}
+
+.tl {
+  background-color: #0000ff;
+  color: #ffffff
+}
+
+.dl {
+  background-color: #00c0ff;
+  color: #000000
+}
+
+</style>
+</head>
+
+<body style="display:none">
+
+<div class="arena">
+  <div id="board" class="board"></div>
+  <div id="tilesRemaining" class="tiles-remaining"></div>
+
+  <div class="status-bar status-bar-human">
+    <div id="scoreHuman" class="score">HUMAN</div>
+  </div>
+  <div id="tilesHuman" class="rack rack-human"></div>
+
+  <input id="humanPlayButton" class="buttons play"
+         type="submit" value="Play!"></input>
+  <input id="humanRecallButton" class="buttons recall"
+         type="submit" value="Recall Tiles"></input>
+  <input id="humanShuffleButton" class="buttons shuffle"
+         type="submit" value="Shuffle Tiles"></input>
+  <input id="dictionaryButton" class="buttons dict"
+         type="submit" value="Dictionary"></input>
+
+  <div class="status-bar status-bar-ai">
+    <div id="scoreAI" class="score">MACHINE</div>
+  </div>
+  <div id="tilesAI" class="rack rack-ai"></div>
+</div>
+
+<script src="scrabble.js"></script>
+<script src="american_english_dictionary.js"></script>
+
+<script>
+  game.play();
+</script>
+
+</body>
+</html>
+

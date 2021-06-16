@@ -1,0 +1,48 @@
+ - Replace var with let / const keywords.
+
+ - Add lots of comments to the code.
+
+ - Provide difficulty levels, like Easy, Medium and Hard.
+   One easy way to do this is as follows:
+
+   1. Sort all possible words by score.
+   2. Divide the set into as many parts as there are difficulty levels.
+      For example, into 3 parts.
+   3. Do a roulette wheel selection, altering pie sizes, depending on
+      the difficulty level the AI is playing at.
+
+ - Refactor the code in game.js that animates AI tiles, to util.js. This
+   will then be useful to move a tile that the user has been dragging,
+   back to it's original position on the rack, if the user presses Esc or
+   drops the tile somewhere outside the board.
+
+ - Weird stuff happens when you drag one tile on top of another dragged tile.
+   Some z-order issue. For example, drag 'A' to the board. Then, drag 'B'.
+   Now, drag 'A' on top of 'B'. You should see 'A'. Drag 'A' away and drag
+   'B' on top of 'A'. You should see 'B'. But this does not happen.
+   Play with various combinations to see the bug manifest.
+
+ - There is no animation when the AI plays a word placed at the bottom of
+   the board.
+
+ - There are lots of places where objects are constructed like:
+   var o = {
+     'prop1': ...,
+     'prop2': ...
+   };
+
+   This prevents the Google Closure compiler from minifying the properties.
+
+   Instead, we should do this:
+   var o = {};
+   o.prop1 = ...;
+   o.prop2 = ...;
+
+ - Check that the word made by the user is connected to the rest of the words.
+   Currently, this is not so!
+
+ - Add logic to detect the end of the game and display a message accordingly
+   mentioning who won the game.
+
+ - Tiles can be placed on the same line, but not connected. This is a bug.
+
