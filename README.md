@@ -30,7 +30,7 @@ exercise for the forker.
 
 # Technicals
 
-There is fairly heavy use of the *trie* data structure and recursion to
+There is fairly heavy use of the *trie* data structure (that's right - *trie*, not *tree*) and recursion to
 compute power sets and permutations of the letters in the AI player's rack.
 The fact that letters in the player's rack can repeat somewhat complicates
 the above computations. Study the code in ai.js carefully.
